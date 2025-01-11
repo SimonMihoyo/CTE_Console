@@ -1,0 +1,114 @@
+# Windows 系统文件
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS 系统文件
+.DS_Store
+.AppleDouble
+.LSOverride
+.Trashes
+
+# Linux 系统文件
+*~
+
+# 编译输出文件
+*.exe
+*.dll
+*.so
+*.dylib
+*.out
+*.o
+*.a
+*.lib
+
+# Visual Studio 相关文件
+../../.vs/
+*.user
+*.suo
+*.cache
+*.pdb
+*.obj
+*.log
+*.sln.docstates
+*.vcxproj.*
+*.vcproj.*
+*.sdf
+*.opendb
+*.opensdf
+*.tlog
+*.lastbuildstate
+*.ipch
+*.pch
+*.ilk
+
+# C++ 调试文件
+*.iobj
+*.ipdb
+*.sbr
+*.natstepfilter
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+CMakeScripts/
+CTestTestfile.cmake
+cmake_install.cmake
+Makefile
+
+# CLion
+.idea/
+cmake-build-*/
+
+#Visual Studio Code 相关文件
+.vscode/
+.history/
+.vscode-test/
+.code-workspace
+
+# Code::Blocks
+*.depend
+*.layout
+*.layout.conf
+*.cbp
+
+# Eclipse
+.project
+.cproject
+.settings/
+
+# Qt Creator
+*.pro.user
+*.qmake.stash
+*.pro.user.*
+
+# Xcode
+*.xcworkspace
+*.xcproject
+*.xcsettings
+*.xccheckout
+*.xcodeproj/*
+!*.xcodeproj/*.pbxproj
+*.xcuserstate
+*.xcuserdatad
+
+# 忽略其他编译工具生成的临时文件和目录
+bin/
+obj/
+build/
+*.elf
+*.map
+*.hex
+
+# 临时文件
+*.tmp
+*.temp
+*.swp
+
+# 忽略常见的备份文件
+*.bak
+*.old
+*.orig
+*.backup
+
