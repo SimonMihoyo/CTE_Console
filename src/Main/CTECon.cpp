@@ -14,29 +14,30 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+
 #include "../Headers/tinyxml2.h"
 #include "../Headers/CTECon.h"
 #include "../Headers/Functions.h"
 
 using namespace std;
 
-auto TestTinyXML() -> void
-{
-    tinyxml2::XMLDocument doc;
-    doc.LoadFile("PathHere");
-    const char* ChartName = doc.FirstChildElement("CTEChart") -> FirstChildElement("Info") -> FirstChildElement("ChartName") -> GetText();
-    cout << ChartName << endl;
-    cout << "1" << endl;
-}
 
 // 主函数.
 int main(const int argc,char* argv[])
 {
     // string XMLPath;
     // cin >> XMLPath;
-    TestTinyXML(); // 测试tinyxml2库
-    // ShowCopyleft(); // 显示版权信息
-    // //为了测试其他功能，先注释掉
+    // const auto [ChartName, Type, Charter, Illustrator, Music, Rate, ChartID, HaveAT] = ReadInfo(XMLPath); // 测试读取xml文件信息
+    // cout << ChartName << endl;
+    // cout << Type << endl;
+    // cout << Charter << endl;
+    // cout << Illustrator << endl;
+    // cout << Music << endl;
+    // cout << Rate << endl;
+    // cout << ChartID << endl;
+    // cout << HaveAT << endl;
+     ShowCopyleft(); // 显示版权信息
+
     // if (argc != 1) //如果有命令行参数
     // {
     //      ProcessArgument(argc,argv);
@@ -48,6 +49,33 @@ int main(const int argc,char* argv[])
     // //MainLoop();
 
     return 0;
+}
+
+auto ReadInfo(const string& ChartPath) -> ChartInfo
+{
+    ChartInfo chartInfo; // 在函数开始处声明一个 ChartInfo 对象
+    try {
+        tinyxml2::XMLDocument doc;
+        tinyxml2::XMLError error = doc.LoadFile(ChartPath.c_str());
+        if (error != tinyxml2::XML_SUCCESS)
+        {
+            throw runtime_error("Error: Failed to load XML file.");
+        }
+        const string ChartName = doc.FirstChildElement("CTEChart")->FirstChildElement("Info")->FirstChildElement("ChartName")->GetText();
+        const string Type = doc.FirstChildElement("CTEChart")->FirstChildElement("Info")->FirstChildElement("Type")->GetText();
+        const string Charter = doc.FirstChildElement("CTEChart")->FirstChildElement("Info")->FirstChildElement("Charter")->GetText();
+        const string Illustrator = doc.FirstChildElement("CTEChart")->FirstChildElement("Info")->FirstChildElement("Illustrator")->GetText();
+        const string Music = doc.FirstChildElement("CTEChart")->FirstChildElement("Info")->FirstChildElement("Music")->GetText();
+        const string ScreenRate = doc.FirstChildElement("CTEChart")->FirstChildElement("Info")->FirstChildElement("ScreeRate")->GetText();
+        const string ChartID = doc.FirstChildElement("CTEChart")->FirstChildElement("Info")->FirstChildElement("ChartID")->GetText();
+        const bool HaveAT = doc.FirstChildElement("CTEChart")->FirstChildElement("Info")->FirstChildElement("HaveAT")->GetText(); // 假设 HaveAT 是一个字符串 "true" 或 "false"
+
+        chartInfo = ChartInfo(ChartName, Type, Charter, Illustrator, Music, ScreenRate, ChartID, HaveAT);
+    }
+    catch (const exception& e) {
+        cerr << "Error: " << e.what() << endl;
+    }
+    return chartInfo; // 返回 chartInfo
 }
 
 // 处理命令行参数

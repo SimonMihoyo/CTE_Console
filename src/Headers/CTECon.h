@@ -33,6 +33,9 @@ auto MainLoop () -> int;
 //显示版权信息
 
 
+//读取Info
+auto ReadInfo(const string& ChartPath) -> ChartInfo;
+
 //显示帮助信息
 auto ProcessArgument(int ArgCount,char* ArgVector[]) -> int;
 

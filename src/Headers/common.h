@@ -77,7 +77,18 @@
 #define PAUSE system("read -n1 -s -p \"Press any key to continue...\"")
 #endif
 
+using namespace std;
 
+struct ChartInfo {
+    string ChartName;
+    string Type;
+    string Charter;
+    string Illustrator;
+    string Music;
+    string Rate;
+    string ChartID;
+    bool HaveAT;
+};
 
 #define COMMON_H
 
