@@ -38,11 +38,11 @@ int main(const int argc,char* argv[])
     // cout << HaveAT << endl;
      ShowCopyleft(); // 显示版权信息
 
-    // if (argc != 1) //如果有命令行参数
-    // {
-    //      ProcessArgument(argc,argv);
-    //
-    // }
+    if (argc != 1) //如果有命令行参数
+    {
+         ProcessArgument(argc,argv);
+
+    }
     //
     // ShowMenu();// 显示菜单
     // //ToUseQueue();
@@ -56,10 +56,9 @@ auto ReadInfo(const string& ChartPath) -> ChartInfo
     ChartInfo chartInfo; // 在函数开始处声明一个 ChartInfo 对象
     try {
         tinyxml2::XMLDocument doc;
-        tinyxml2::XMLError error = doc.LoadFile(ChartPath.c_str());
-        if (error != tinyxml2::XML_SUCCESS)
+        if (tinyxml2::XMLError error = doc.LoadFile(ChartPath.c_str()); error != tinyxml2::XML_SUCCESS)
         {
-            throw runtime_error("Error: Failed to load XML file.");
+            throw runtime_error(" Failed to load XML file.");
         }
         const string ChartName = doc.FirstChildElement("CTEChart")->FirstChildElement("Info")->FirstChildElement("ChartName")->GetText();
         const string Type = doc.FirstChildElement("CTEChart")->FirstChildElement("Info")->FirstChildElement("Type")->GetText();
@@ -81,7 +80,20 @@ auto ReadInfo(const string& ChartPath) -> ChartInfo
 // 处理命令行参数
 auto ProcessArgument(const int ArgCountNum,char* ArgVector[]) -> int
 {
-    for (int i = 1;i < ArgCountNum;i++) // 遍历命令行参数
+    string FirstPath = ArgVector[1];
+    if (filesystem::exists(FirstPath ))
+        {
+        string Path = FirstPath;
+        cout << Path << endl;
+    }
+    else
+    {
+        string ErrorMessage = "Error: File not found: " + FirstPath;
+        cout << ErrorMessage.c_str() << endl;
+        cout << "Please check the case sensitivity and existence of the path." << endl;
+        return FILE_NOT_FOUND;
+    }
+    for (int i = 2;i < ArgCountNum;i++) // 遍历命令行参数
     {
         if (strcmp(ArgVector[i],"-h") == 0 )
         {
@@ -148,9 +160,6 @@ auto MainLoop() -> int
 
     return 0;
 }
-
-
-
 
 // 处理文件
 auto ProcessFile( const string& FilePath) -> int
