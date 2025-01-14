@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CTEChart>
+    <Info>
+        <ChartName>Test Chart</ChartName>
+        <Type>Normal</Type>
+        <!-- Normal, Festival, Practice, Cooperation -->
+        <Charter>SimonMihoyo</Charter>
+        <Illustrator>SimonMihoyo</Illustrator>
+        <Music>SimonMihoyo</Music>
+        <ScreeRate>1</ScreeRate>
+        <!-- 1 = 16:9, 2 = 4:3 -->
+        <ChartID>429fad0c00fa5a15</ChartID>
+        <HaveAT>1</HaveAT>
+        <!-- 0 = No, 1 = Yes -->
+    </Info>
+    <LineGroup>
+        <Line>
+            <BeginTime>0</BeginTime>
+            <EndTime>100</EndTime>
+            <ShowPosition>
+                <!-- Rate, [50,50] means center of the screen -->
+                <X>0</X>
+                <Y>0</Y>
+                <!-- From top left to bottom right -->
+                <Angle>135</Angle>
+                <Alpha>100</Alpha>
+            </ShowPosition>
+            <EffectGroup>
+                <!-- 1 = translate, 2 = rotating, 3 = alpha change -->
+                <!-- Easing -->
+                <!-- 1 = linear, 2 = in-out sine, 3 = out-in sine, 4 = in-out quad, 5 = out-in quad, 6 = in-out cubic, 7 = out-in cubic, 8 = in-out quart, 9 = out-in quart, 10 = in-out quint, 11 = out-in quint, 12 = in-out expo, 13 = out-in expo, 14 = in-out circ, 15 = out-in circ, 16 = in-out back, 17 = out-in back, 18 = in-out elastic, 19 = out-in elastic, 20 = in-out bounce, 21 = out-in bounce -->
+                <Effect>
+                    <Type>1</Type>
+                    <Displacement>
+                        <X>30</X>
+                        <Y>30</Y>
+                    </Displacement>
+                    <BeginTime>0</BeginTime>
+                    <EndTime>100</EndTime>
+                    <Easing>1</Easing>
+
+                </Effect>
+                <Effect>
+                    <Type>2</Type>
+                    <Rotation>
+                        <Angle>180</Angle>
+                    </Rotation>
+                    <BeginTime>0</BeginTime>
+                    <EndTime>100</EndTime>
+                    <Easing>1</Easing>
+                </Effect>
+                <Effect>
+                    <Type>3</Type>
+                    <AlphaChange>
+                        <From>100</From>
+                        <To>0</To>
+                    </AlphaChange>
+                    <BeginTime>0</BeginTime>
+                    <EndTime>100</EndTime>
+                    <Easing>1</Easing>
+                </Effect>
+            </EffectGroup>
+            <NoteGroup>
+                <Note>
+                    <Type>0</Type>
+                    <!-- 0 = Down, 1 = Circle -->
+                    <OnLineTime>50</OnLineTime>
+                    <ShowPosition>
+                        <X>0</X>
+                        <Y>0</Y>
+                        <Angle>0</Angle>
+                        <Alpha>100</Alpha>
+                    </ShowPosition>
+                    <EffectGroup>
+                        <Effect>
+                            <Type>1</Type>
+                            <Displacement>
+                                <X>0</X>
+                                <Y>0</Y>
+                            </Displacement>
+                            <BeginTime>0</BeginTime>
+                            <EndTime>100</EndTime>
+                            <Easing>1</Easing>
+                        </Effect>
+                        <Effect>
+                            <Type>2</Type>
+                            <Rotation>
+                                <Angle>-180</Angle>
+                            </Rotation>
+                            <BeginTime>0</BeginTime>
+                            <EndTime>100</EndTime>
+                            <Easing>1</Easing>
+                        </Effect>
+                        <Effect>
+                            <Type>3</Type>
+                            <AlphaChange>
+                                <From>100</From>
+                                <To>0</To>
+                            </AlphaChange>
+                            <BeginTime>0</BeginTime>
+                            <EndTime>100</EndTime>
+                            <Easing>1</Easing>
+                        </Effect>
+                    </EffectGroup>
+                </Note>
+            </NoteGroup>
+        </Line>
+        <Line>
+            <BeginTime>50</BeginTime>
+            <EndTime>100</EndTime>
+            <ShowPosition>
+                <X>50</X>
+                <Y>50</Y>
+                <Angle>45</Angle>
+                <Alpha>100</Alpha>
+            </ShowPosition>
+            <EffectGroup>
+                <Effect>
+                    <Type>1</Type>
+                    <Displacement>
+                        <X>30</X>
+                        <Y>30</Y>
+                    </Displacement>
+                    <BeginTime>0</BeginTime>
+                    <EndTime>100</EndTime>
+                    <Easing>1</Easing>
+                </Effect>
+                <Effect>
+                    <Type>2</Type>
+                    <Rotation>
+                        <Angle>180</Angle>
+                    </Rotation>
+                    <BeginTime>0</BeginTime>
+                    <EndTime>100</EndTime>
+                    <Easing>1</Easing>
+                </Effect>
+                <Effect>
+                    <Type>3</Type>
+                    <AlphaChange>
+                        <From>100</From>
+                        <To>0</To>
+                    </AlphaChange>
+                    <BeginTime>0</BeginTime>
+                    <EndTime>100</EndTime>
+                    <Easing>1</Easing>
+                </Effect>
+            </EffectGroup>
+        </Line>
+    </LineGroup>
+</CTEChart>
