@@ -57,9 +57,7 @@ Some command line options are available:
 ## Supported Platforms
 - Windows (10 or later)
 - Linux (Only Tested on Ubuntu 24.04)
-
-## NOT Supported Platforms
-- macOS (11.3 or higher,in theory,but not yet supported,although it is in the roadmap and have the same code base as Windows and Linux.)
+- macOS (11.3 or higher,and now tested and passed on M3 MacBook Air with macOS Sequoia 15.3.1)
 
 ## Least Compiler Requirements
 C++ 20.

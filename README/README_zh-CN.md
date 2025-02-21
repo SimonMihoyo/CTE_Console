@@ -53,9 +53,7 @@ cmake ..
 ## 支持的平台
 - Windows (10 及以上版本)
 - Linux（仅在Ubuntu24.04上通过测试）
-
-## 不支持的平台
-- macOS（尚未支持，尽管它在路线图上，并且具有与Windows和Linux相同的代码基础。）
+- macOS（11.3或更高，目前在 Macbook Air M3 2024 macOS Sequoia 15.3.1上通过测试。）
 
 ## 最低编译器要求
 C++ 20。
